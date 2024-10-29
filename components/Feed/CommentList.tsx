@@ -6,7 +6,6 @@ import { useSession } from "next-auth/react";
 import Image from "next/image";
 import { useOptimistic, useState } from "react";
 import { FaArrowCircleRight } from "react-icons/fa";
-import { LiaCommentSolid } from "react-icons/lia";
 type CommentWithUser = Comment & { user: User };
 
 const CommentList = ({
@@ -42,12 +41,15 @@ const CommentList = ({
         email: null,
         college: null,
         emailVerified: null,
+        createdAt: new Date(Date.now()),
       },
     });
     try {
       const createdComment = await addComment(postId, desc);
       setCommentState((prev) => [createdComment, ...prev]);
-    } catch (err) {}
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const [optimisticComments, addOptimisticComment] = useOptimistic(
