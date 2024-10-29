@@ -6,6 +6,7 @@ import { CldUploadWidget } from "next-cloudinary";
 import { useRouter } from "next/navigation";
 import { useActionState, useState } from "react";
 import UpdateButton from "./UpdateButton";
+import { RxCrossCircled } from "react-icons/rx";
 
 const UpdateUser = ({ user }: { user: User }) => {
   const [open, setOpen] = useState(false);
@@ -98,7 +99,7 @@ const UpdateUser = ({ user }: { user: User }) => {
               className="absolute top-3 right-2 cursor-pointer text-xl "
               onClick={handleClose}
             >
-              X
+              <RxCrossCircled />
             </div>
           </form>
         </div>

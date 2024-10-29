@@ -67,13 +67,12 @@ const Profile = async ({ params }: Profile) => {
         <div className="flex flex-col gap-6">
           <div className="flex flex-col items-center justify-center">
             <div className="w-full h-64 relative">
-              {currentUserId === id && !user.cover && (
-                <button className="z-50 absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] flex items-center gap-2 bg-slate-500 text-white px-4 py-[5px] rounded-3xl font-medium text-lg">
-                  {/* <UploadImageWidget/> */}
-                  Add a Cover
-                  <FaPlusSquare />
-                </button>
-              )}
+              {/* {currentUserId === id && !user.cover && (
+                  <button className="z-50 absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] flex items-center gap-2 bg-slate-500 text-white px-4 py-[5px] rounded-3xl font-medium text-lg">
+                    Add a Cover
+                    <FaPlusSquare />
+                  </button>
+                )} */}
 
               <Image
                 src={user.cover || noCover}
