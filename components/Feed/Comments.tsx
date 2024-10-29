@@ -6,6 +6,7 @@ const Comments = async ({ postId }: { postId: string }) => {
     where: {
       postId,
     },
+    orderBy: { createdAt: "desc" },
     include: {
       user: true,
     },
